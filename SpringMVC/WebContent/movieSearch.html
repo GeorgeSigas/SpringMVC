@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+
+    <!-- set an initial scale for pc and phone view -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title> Movie Search</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="functions.js"></script>
+    <!-- connection with an external css file -->
+    <link rel="stylesheet" type="text/css" href="styles.css">
+
+</head>
+
+<body>
+
+    <div class="grid-container">
+
+        <div class="top-menu">
+            <ul>
+                <!-- sign up -->
+                <li><button class="button" type="button" onclick="document.getElementById('id00').style.display='block';" style="width:auto;">Sign up</button></li>
+
+                <div id="id00" class="modal">
+
+                    <div style="background-color:#f1f1f1">
+                        <div class="imgcontainer">
+                            <span onclick="document.getElementById('id00').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <picture>
+                                <source media="(min-width: 450px)" srcset="images/enter.jpg">
+                                <img src="images/enter-1.jpg" alt="Login" width="200" height="200">
+                            </picture>
+                        </div>
+						<p name="errorMsg" style="color:red"> <p>
+                        <div class="container">
+                            <label for="fName"><b>First Name</b></label>
+                            <input type="text" placeholder="Enter First Name" name="fname" required>
+
+                            <label for="lName"><b>Last Name</b></label>
+                            <input type="text" placeholder="Enter Last Name" name="lname" required>
+
+                            <label for="uname"><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="uname" required>
+
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+
+                            <button class="button" type="submit" onclick="signupActions()">Create Account</button>
+
+                        </div>
+
+                        <div class="container" style="background-color:#f1f1f1">
+                            <button type="button-1" onclick="document.getElementById('id00').style.display='none'" class="cancelbtn">Cancel</button>
+
+                        </div>
+                    </div>
+                
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('id00');
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+
+
+                <!-- login -->
+                <li><button class="button" type="button" onclick="document.getElementById('id01').style.display='block';" style="width:auto;">Login</button></li>
+
+                <div id="id01" class="modal">
+
+                    <div style="background-color:#f1f1f1">
+                        <div class="imgcontainer">
+                            <span onclick="document.getElementById('id01').style.display='none'" class="close" title="Close Modal">&times;</span>
+                            <picture>
+                                <source media="(min-width: 450px)" srcset="images/enter-1.jpg">
+                                <img src="images/enter.jpg" alt="Login" width="200" height="200">
+                            </picture>
+                        </div>
+						<p name="errorMsg" style="color:red"> <p>
+                        <div class="container">
+                            <label for="uname"><b>Username</b></label>
+                            <input type="text" placeholder="Enter Username" name="uname" required>
+
+                            <label for="psw"><b>Password</b></label>
+                            <input type="password" placeholder="Enter Password" name="psw" required>
+
+                            <button class="button" type="submit" onclick="loginActions()">Login</button>
+
+                        </div>
+
+                        <div class="container" style="background-color:#f1f1f1">
+                            <button type="button-1" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    // Get the modal
+                    var modal = document.getElementById('id01');
+
+                    // When the user clicks anywhere outside of the modal, close it
+                    window.onclick = function(event) {
+                        if (event.target == modal) {
+                            modal.style.display = "none";
+                        }
+                    }
+                </script>
+
+            </ul>
+        </div>
+
+        <div class="image">
+            <a href="movieSearch.html">
+                <picture>
+                    <source media="(min-width: 450px)" srcset="images/image-1.jpg">
+                    <img src="images/image-alt.jpg" alt="Home" width="200" height="200">
+                </picture>
+            </a>
+        </div>
+
+        <!--
+        <div class="recentSearches">
+            <h2>Recent Search</h2>
+        </div>
+        -->
+
+        <div class="searchBar">
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search a movie..." name="search" onkeyup="SearchFunc()">
+            </div>
+        </div>
+
+        <div class="searchResults" id="Results">
+            <h2>Results</h2>
+            <div id="movies" class="row"></div>
+        </div>
+
+        <!-- footer -->
+        <div class="ftr">
+            <footer class="footer">
+                <p>
+                    &copy; 2020 &bull; <u>Thanos Ntales</u> &bull; 3160117 &bull; <u>George Sigas</u> &bull; 3160158
+                </p>
+            </footer>
+        </div>
+    </div>
+</body>
+
+</html>
